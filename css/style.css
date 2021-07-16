@@ -149,16 +149,22 @@ a:link{
 .about{
   color: #7fffd4;
   display: inline-flex;
-  padding: 0px 45px;
+  padding: 40px 45px;
   align-items: center;
   line-height: 1.8em;
+  border: 1px solid red;
+  width: 100vw;
+  overflow: hidden;
+
 }
 #myCanvas {
   width: 45vw;
   height: 60vh;
+  border: 1px solid red;
   
 }
 .aboutInfo{
+  border: 1px solid red;
   
   width: 45%;
   
@@ -166,6 +172,7 @@ a:link{
   
 }
 .aboutInfo p{
+  border: 1px solid red;
   
   padding: 20px 25%;
   
@@ -273,6 +280,7 @@ a:link{
   width: 90% ;
   margin-left: 50px;
   color: #fff;
+  padding-right: 15px;
 }
 .out_cs:before {
   position: absolute;
@@ -309,7 +317,8 @@ a:link{
 
 .cs {
   position: relative;
- 
+  margin-top: 0px !important;
+  padding: 0px !important;
 }
 label{
   color: #fff;
@@ -583,19 +592,11 @@ and form
   }
   .pro_text p{
     width: auto;
-    
-    
-    
     margin-left: 20px;
-   
   }
-  .pro_text span{
-    
-    
-    margin-top: 20px !important;
-    
+  .out_cs{
     padding: 10px 20px;
-    margin-left: 20px;
+    margin-left: 20px ;
    
   
   }
@@ -610,10 +611,98 @@ form {
 .footer{
   padding-left: 0px;
 }
+.aboutImg{
+  padding-top: 60px;
+  height: 400px;
+  overflow: hidden;
+}
+#myCanvas {
+  width: 115vw;
+  height: 60vh;
+  border: 1px solid red;
+  
+}
 }
 @media screen and (max-width: 375px){
-  
+  .aboutImg{
+    height: 380px;
+    overflow: hidden;
+  }
+  #myCanvas {
+    width: 115vw;
+    height: 55vh;
+    border: 1px solid red;
+    
+  }
 }
 @media screen and (max-width: 320px){
-  
+  .intro p{
+    margin: 20px 0px 50px 45px;
+    line-height: 35px;
+    font-size: 30px;
+  }
+  .intro p::before{
+    
+    font-size: 14px;
+     }
+  .intro p::after{
+    
+    font-size: 14px;
+    }
+  .contactBtn{
+    
+    margin:0px 0px 30px 45px ;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 800;
+    
+  }
+  .pro_text p{
+    font-size: 14px;
+    
+  }
+  .out_cs{
+    margin: 20px;
+  }
+  .aboutImg{
+    height: 300px;
+    overflow: hidden;
+  }
+  #myCanvas {
+    width: 130vw;
+    height: 60vh;
+    border: 1px solid red;
+    
+  }
+  .about{
+    padding-left: 0px;
+    padding-top: 80px;
+  }
+  .aboutInfo{
+    padding-left: 15px;
+    
+  }
+  .button::before{
+    font-size: 14px;
+  }
+  .button::after{
+    font-size: 14px;
+  }
+  .topnav a img{
+    width: 50px;
+  }
+  .topnav a {
+    line-height: 18px;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 8px 28px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.s_icon svg{
+  width: 30px;
+  height: 30px;
+}
 }
