@@ -3,6 +3,11 @@ const menu = document.querySelector('.js-menu')
 const menuButton = document.querySelector('.js-menu-button')
 const navCurtain = document.querySelector('.js-nav-curtain')
 
+function demo(){
+  navCurtain.classList.remove('curtain-down')
+    navCurtain.classList.add('curtain-up')
+}
+
 function mobileNavToggler() {
   const state = {
     isOpen: false,
@@ -73,6 +78,7 @@ function mobileNavToggler() {
     },
 
     init() {
+      menu.addEventListener('click', this)
       menuButton.addEventListener('click', this)
       navCurtain.addEventListener('animationend', this)
     },
