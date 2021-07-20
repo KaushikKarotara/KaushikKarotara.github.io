@@ -189,7 +189,7 @@ class Dot {
 const dots = PATHS.map((e,i)=>new Dot(i, e));
 
 function render(){
-  ctx.fillStyle = "#00356B";
+  ctx.fillStyle = "#fff";
   ctx.fillRect(0,0,width, height);
     // Sort dots array based on their projected size
   dots.sort((dot1, dot2) => {

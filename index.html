@@ -18,7 +18,8 @@
     #particles-js {
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 100vh;
+      background-color: #1c1d25;
     }
   </style>
   <link rel="stylesheet" href="assest/fontawesome.min.css">
@@ -40,8 +41,8 @@
       <div class="site-nav__curtain js-nav-curtain"></div>
 
       <div class="wrapper wrapper--nav-area">
-        <a class="logo" href="#">
-          LOGO
+        <a class="logo" href=".">
+          <img src="/img/KK Logo.svg" alt="" width="60px">
         </a>
         <button class="menu-button js-menu-button" aria-expanded="false" aria-controls="menu" aria-label="Menu button">
           <span class="menu-button__lines">
@@ -58,16 +59,19 @@
         </ul>
       </div>
     </nav>
-    <div class="intro">
-      <p>
-        <br>
-        Hey,<br>
-        I'm Kaushik,<br>
-        Full Stack Web Developer. <br>
-      </p>
-      <div class="button"><br><br><br><a class="contactBtn" href="#contact">Contact</a><br><br><br></div>
-
-    </div>
+    
+      <div class="intro">
+        <p>
+          <br>
+          Hey,<br>
+          I'm Kaushik,<br>
+          Full Stack Web Developer. <br>
+        </p>
+        <div class="button"><br><br><br><a class="contactBtn" href="#contact">Contact</a><br><br><br></div>
+  
+      </div>
+    
+    
   </div>
   <div class="about" id="about">
     <div class="aboutInfo">
@@ -312,10 +316,11 @@
   <div class="project" id="project">
 
     <div class="pro_item">
-      <a href="#" class="pro_sec">
+      <a href="/fictional-university.html" class="pro_sec">
         <div class="pro_text">
-          <h3>Project Lato</h3>
-          <p>Leader in Bathroom furniture since 1983</p>
+          <h3>Fictional University</h3>
+          <p>Fictional University is an Virtual University</p>
+          
           <span class="out_cs"><span class="cs">Case study</span> </span>
         </div>
       </a>
@@ -323,7 +328,7 @@
 
   </div>
   <div class="contact" id="contact">
-    <form id="contactForm" class="contactForm" novalidate="" action="https://forms.io/mpzlrzdo" method="POST">
+    <form id="contactForm" class="contactForm" novalidate="" action="" method="POST">
       <noscript>
         <p>All Feilds Required.</p>
       </noscript>
@@ -344,12 +349,12 @@
 
       <br><br><br>
 
-      <input class="submit" type="submit" value="Submit" title="Submit">
+      <span class="out_sub"><input class="submit" type="submit" value="Submit" title="Submit"></span>
 
 
     </form><br>
   </div>
-  <hr>
+
   <div class="footer">
     <p><br>
       © 2020, All rights reserved by Kaushik Karotara<br><br></p>
