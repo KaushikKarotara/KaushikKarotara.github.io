@@ -88,7 +88,7 @@ a:link{
 .about{
   color: #1c1d25;
   display: inline-flex;
-  padding: 40px 0px;
+  padding: 40px 0px 0px 0px;
   align-items: center;
   line-height: 1.8em;
   background-color: #fff;
@@ -145,7 +145,7 @@ a:link{
 .project{
   position: relative;
   
-  padding:150px 45px ;
+  padding:50px 45px 150px 45px;
   background-color: #fff;
   color: #1c1d25;
 }
@@ -173,7 +173,7 @@ a:link{
   height: 480px;
   border-radius: 10px;
   box-shadow: 0 20px 80px 0 rgba(0,0,0,.65);
-  background-image: url(/img/library.jpg);
+  
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -182,7 +182,13 @@ a:link{
   margin-bottom: 30px;
 }
 
-
+.item1{
+  background-image: url(/img/library.jpg);
+}
+.item2{
+  margin-top: 150px;
+  background-image: url(/img/Portfolio.png);
+}
 
 .pro_sec::before{
   position: absolute;
@@ -283,11 +289,18 @@ label{
 input,textarea{
   background-color: #fff;
   border-style: none;
-  border-color: #fff;
-  border-bottom: 6px solid #00356B;
+  border-radius: 5px;
+  border: 2px solid #c3c3c3;
   outline: none;
   padding:10px 15px ;
   width: 80%;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+input:focus,textarea:focus{
+  border: 2px solid #00356B;
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,.15);
 }
 .contact{
   padding:0px 0px 80px 45px;
@@ -572,6 +585,7 @@ and form
   .pro_item{
     width: 95%;
     height:360px ;
+    box-shadow: 0 5px 30px 0 rgba(0,0,0,.65);
    }
    
   .pro_text h3{
@@ -608,7 +622,7 @@ form {
 .aboutImg{
   padding-top: 40px;
   padding-bottom: 40px;
-  height: 400px;
+  height: 75vh;
   overflow: hidden;
   
 }
@@ -686,7 +700,7 @@ form {
     margin: 20px;
   }
   .aboutImg{
-    height: 300px;
+    height: 70vh;
     overflow: hidden;
   }
   #myCanvas {

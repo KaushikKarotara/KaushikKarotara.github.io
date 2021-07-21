@@ -48,7 +48,7 @@ let GLOBE_RADIUS; // Radius of the globe based on the canvas width
 function onResize() {
   PERSPECTIVE = width * 0.8;
   PROJECTION_CENTER_X = width / 1.9;
-  PROJECTION_CENTER_Y = height / 1.99;
+  PROJECTION_CENTER_Y = height / 1.85;
   GLOBE_RADIUS = width / 4;
   // We need to define the dimensions of the canvas to our canvas element
   // Javascript doesn't know the computed dimensions from CSS so we need to do it manually

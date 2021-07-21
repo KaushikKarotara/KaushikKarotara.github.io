@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  
+
   <div id="particles-js"></div>
 
 
@@ -59,19 +59,19 @@
         </ul>
       </div>
     </nav>
-    
-      <div class="intro">
-        <p>
-          <br>
-          Hey,<br>
-          I'm Kaushik,<br>
-          Full Stack Web Developer. <br>
-        </p>
-        <div class="button"><br><br><br><a class="contactBtn" href="#contact">Contact</a><br><br><br></div>
-  
-      </div>
-    
-    
+
+    <div class="intro">
+      <p>
+        <br>
+        Hey,<br>
+        I'm Kaushik,<br>
+        Full Stack Web Developer. <br>
+      </p>
+      <div class="button"><br><br><br><a class="contactBtn" href="#contact">Contact</a><br><br><br></div>
+
+    </div>
+
+
   </div>
   <div class="about" id="about">
     <div class="aboutInfo">
@@ -315,12 +315,23 @@
   </div>
   <div class="project" id="project">
 
-    <div class="pro_item">
+    <div class="pro_item item1">
       <a href="/fictional-university.html" class="pro_sec">
         <div class="pro_text">
           <h3>Fictional University</h3>
           <p>Fictional University is an Virtual University</p>
-          
+
+          <span class="out_cs"><span class="cs">Case study</span> </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="pro_item item2">
+      <a href="/personal-portfolio.html" class="pro_sec">
+        <div class="pro_text">
+          <h3>Personal Portfolio</h3>
+          <p>My Personal Portfolio is also an beautiful Website</p>
+
           <span class="out_cs"><span class="cs">Case study</span> </span>
         </div>
       </a>
@@ -334,18 +345,20 @@
       </noscript>
 
       <label for="name">name</label><br>
-      <input id="name" name="name" type="text" autocorrect="off" autocapitalize="on" required><br><br><br>
+      <input id="name" name="name" type="text" autocorrect="off" autocapitalize="on" required
+        placeholder="Your Name"><br><br><br>
 
 
 
       <label for="email">email</label><br>
-      <input id="email" name="email" type="email" autocorrect="off" autocapitalize="off" required="">
+      <input id="email" name="email" type="email" autocorrect="off" autocapitalize="off" required
+        placeholder="Your E-Mail Address">
 
       <br><br><br>
 
       <label for="message">message</label><br>
-      <textarea id="message" name="message" autocorrect="off" autocapitalize="off" autocomplete="on"
-        required=""></textarea>
+      <textarea id="message" name="message" autocorrect="off" autocapitalize="off" autocomplete="on" rows="8" required
+        placeholder="Your Message"></textarea>
 
       <br><br><br>
 
@@ -386,9 +399,7 @@
 
 
   <script src="js/particles.js"></script>
-  <script src="js/app.js">
-
-  </script>
+  <script src="js/app.js"></script>
   <script src="js/skill.js"></script>
   <script src="js/script.js"></script>
   <script src="js/navslider.js"></script>

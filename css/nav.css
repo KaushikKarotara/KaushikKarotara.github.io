@@ -117,7 +117,13 @@ a {
   z-index: 3;
   box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
 }
-
+.site-nav__link:hover{
+  color: #18c09c;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom:2px solid #fff;
+  
+}
 .site-nav__menu {
   grid-area: menu;
   justify-content: flex-end;
