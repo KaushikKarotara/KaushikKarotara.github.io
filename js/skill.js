@@ -1,7 +1,7 @@
 
 const DOT_RADIUS = 64; // Radius of the dots
 const SCALE = 1; // Scale of svgs
-const MIN_SPEED = 0.0007;
+const MIN_SPEED = 0.007;
 const MOUSE_SPEED = 0.05;
 
 // TRANSLATE SVG ELEMENTS TO Path2D
@@ -47,8 +47,8 @@ let GLOBE_RADIUS; // Radius of the globe based on the canvas width
 
 function onResize() {
   PERSPECTIVE = width * 0.8;
-  PROJECTION_CENTER_X = width / 2;
-  PROJECTION_CENTER_Y = height / 2;
+  PROJECTION_CENTER_X = width / 1.9;
+  PROJECTION_CENTER_Y = height / 1.99;
   GLOBE_RADIUS = width / 4;
   // We need to define the dimensions of the canvas to our canvas element
   // Javascript doesn't know the computed dimensions from CSS so we need to do it manually
