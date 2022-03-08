@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .rtglobe{
+    width: 90%;
+  min-width:960px;
+    height: auto;
+    margin: 50px auto;
+}
+svg{
+    min-height: 500px !important;
+}
+@media only screen and (max-width: 600px) {
+  .rtglobe{
+	min-width:400px;
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 425px) {
+	.rtglobe{
+	min-width:300px;
+  }
+  svg{
+    
+  }
+}
+        </style>
+    </head>
+    <body>
+        <div class="rtglobe">
+            <svg id="globert"></svg>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://d3js.org/topojson.v1.min.js"></script>
+        <script>
+            var svgContainer = jQuery("#globert");
+    var gwidth = svgContainer.width();
+    var gheight = svgContainer.height();
+    var gaspect = gwidth/gheight;
+    var container = svgContainer.parent();
+    var targetWidth = container.width();
+var targetHeight = (targetWidth/16)*9;
+
+
+
+
+const width = 960;
+            const height = 500;
+          	const config = {
+              speed: 0.012,
+              verticalTilt: -20,
+              horizontalTilt: 0
+            }
+            let locations = [];
+            const svg = d3.select('svg')
+                .attr('width', targetWidth).attr('height', targetHeight);
+            const markerGroup = svg.append('g');
+            const projection = d3.geoOrthographic();
+            const initialScale = projection.scale();
+            const path = d3.geoPath().projection(projection);
+            const center = [width/2, height/2];
+
+            drawGlobe();    
+            drawGraticule();
+            enableRotation();    
+
+            function drawGlobe() {  
+                d3.queue()
+                    .defer(d3.json, 'https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/world-110m.json')          
+                    .defer(d3.json, 'https://kaushikkarotara.github.io/assest/locations.json')
+                    .await((error, worldData, locationData) => {
+                        svg.selectAll(".segment")
+                            .data(topojson.feature(worldData, worldData.objects.countries).features)
+                            .enter().append("path")
+                            .attr("class", "segment")
+                            .attr("d", path)
+                            .style("stroke", "#f1f1f1")
+                            .style("stroke-width", "1px")
+                            .style("fill", (d, i) => '#3D9F52')
+                            .style("opacity", "1");
+                            locations = locationData;
+                            drawMarkers();  
+
+                                           
+                    });
+            }
+
+            function drawGraticule() {
+                const graticule = d3.geoGraticule()
+                    .step([10, 10]);
+
+                svg.append("path")
+                    .datum(graticule)
+                    .attr("class", "graticule")
+                    .attr("d", path)
+                    .style("fill", "#fff")
+                .style("stroke", "#ccc");
+                     
+            }
+
+            function enableRotation() {
+                d3.timer(function (elapsed) {
+                    projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
+                    svg.selectAll("path").attr("d", path);
+                    drawMarkers();
+                });
+            }        
+
+            function drawMarkers() {
+                const markers = markerGroup.selectAll('circle')
+                    .data(locations);
+                markers
+                    .enter()
+                    .append('circle')
+                    .merge(markers)
+                    .attr('cx', d => projection([d.longitude, d.latitude])[0])
+                    .attr('cy', d => projection([d.longitude, d.latitude])[1])
+                    .attr('fill', d => {
+                        const coordinate = [d.longitude, d.latitude];
+                        gdistance = d3.geoDistance(coordinate, projection.invert(center));
+                        return gdistance > 1.57 ? 'none' : '#0194E1';
+                    })
+                    .attr('r', 7);
+
+                markerGroup.each(function () {
+                    this.parentNode.appendChild(this);
+                });
+            }
+        </script>
+    </body>
+</html>
